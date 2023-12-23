@@ -1,6 +1,6 @@
 package com.yorix.universities.model;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
+import com.yorix.universities.enums.StudyProfile;
 
 public class University {
     private String id;

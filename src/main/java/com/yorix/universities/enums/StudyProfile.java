@@ -1,4 +1,4 @@
-package com.yorix.universities.model;
+package com.yorix.universities.enums;
 
 public enum StudyProfile {
     MATHEMATICS("Математика"),
@@ -12,7 +12,8 @@ public enum StudyProfile {
     ENERGY("Энергетика"),
     COMPUTER_SCIENCE("Информатика"),
     PHILOSOPHY("Философия"),
-    JURISPRUDENCE("Юриспруденция");
+    JURISPRUDENCE("Юриспруденция"),
+    LINGUISTICS("Лингвистика");
 
     private final String profileName;
 

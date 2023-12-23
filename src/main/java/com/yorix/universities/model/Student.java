@@ -1,7 +1,5 @@
 package com.yorix.universities.model;
 
-import org.apache.commons.lang3.builder.ToStringBuilder;
-
 public class Student {
     private String fullName;
     private String universityId;
