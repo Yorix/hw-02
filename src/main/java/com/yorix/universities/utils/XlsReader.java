@@ -1,4 +1,4 @@
-package com.yorix.universities.service;
+package com.yorix.universities.utils;
 
 import com.yorix.universities.enums.StudyProfile;
 import com.yorix.universities.model.Student;
@@ -13,21 +13,21 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class UniversityReader {
+public class XlsReader {
 
-    private UniversityReader() {
+    private XlsReader() {
     }
 
     public static List<Student> readStudents(String filename) {
         List<Student> students = new ArrayList<>();
         XSSFWorkbook workbook = getDocument(filename);
         XSSFSheet studentsSheet = workbook.getSheet("Студенты");
-        Iterator<Row> iterator = studentsSheet.iterator();
 
+        Iterator<Row> iterator = studentsSheet.iterator();
         iterator.next();
-        Row row;
+
         while (iterator.hasNext()) {
-            row = iterator.next();
+            Row row = iterator.next();
             Student student = new Student()
                     .setUniversityId(row.getCell(0).getStringCellValue())
                     .setFullName(row.getCell(1).getStringCellValue())
@@ -42,12 +42,12 @@ public class UniversityReader {
         List<University> universities = new ArrayList<>();
         XSSFWorkbook workbook = getDocument(filename);
         XSSFSheet universitiesSheet = workbook.getSheet("Университеты");
-        Iterator<Row> iterator = universitiesSheet.iterator();
 
+        Iterator<Row> iterator = universitiesSheet.iterator();
         iterator.next();
-        Row row;
+
         while (iterator.hasNext()) {
-            row = iterator.next();
+            Row row = iterator.next();
             University university = new University()
                     .setId(row.getCell(0).getStringCellValue())
                     .setFullName(row.getCell(1).getStringCellValue())
