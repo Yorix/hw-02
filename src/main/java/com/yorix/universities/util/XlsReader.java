@@ -1,4 +1,4 @@
-package com.yorix.universities.utils;
+package com.yorix.universities.util;
 
 import com.yorix.universities.enums.StudyProfile;
 import com.yorix.universities.model.Student;
@@ -62,6 +62,7 @@ public class XlsReader {
     private static XSSFWorkbook getDocument(String filename) {
         try {
             InputStream input = ClassLoader.getSystemClassLoader().getResourceAsStream(filename);
+            assert input != null;
             return new XSSFWorkbook(input);
         } catch (IOException e) {
             throw new RuntimeException(e);
