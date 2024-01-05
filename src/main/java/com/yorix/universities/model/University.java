@@ -1,12 +1,18 @@
 package com.yorix.universities.model;
 
+import com.google.gson.annotations.SerializedName;
 import com.yorix.universities.enums.StudyProfile;
 
 public class University {
+    @SerializedName("Identify")
     private String id;
+    @SerializedName("Full name")
     private String fullName;
+    @SerializedName("Short name")
     private String shortName;
+    @SerializedName("Year of foundation")
     private int yearOfFoundation;
+    @SerializedName("Main profile")
     private StudyProfile mainProfile;
 
     public University() {

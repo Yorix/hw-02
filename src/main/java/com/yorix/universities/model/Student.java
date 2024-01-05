@@ -1,9 +1,15 @@
 package com.yorix.universities.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Student {
+    @SerializedName("Full name")
     private String fullName;
+    @SerializedName("University ID")
     private String universityId;
+    @SerializedName("Current course number")
     private int currentCourseNumber;
+    @SerializedName("Average exam score")
     private float avgExamScore;
 
     public Student() {
