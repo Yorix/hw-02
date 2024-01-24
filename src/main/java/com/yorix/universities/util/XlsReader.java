@@ -7,6 +7,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -18,9 +19,9 @@ public class XlsReader {
     private XlsReader() {
     }
 
-    public static List<Student> readStudents(String filename) {
+    public static List<Student> readStudents(String path) {
         List<Student> students = new ArrayList<>();
-        XSSFWorkbook workbook = getDocument(filename);
+        XSSFWorkbook workbook = getDocument(path);
         XSSFSheet studentsSheet = workbook.getSheet("Студенты");
 
         Iterator<Row> iterator = studentsSheet.iterator();
@@ -59,13 +60,12 @@ public class XlsReader {
         return universities;
     }
 
-    private static XSSFWorkbook getDocument(String filename) {
-        try {
-            InputStream input = ClassLoader.getSystemClassLoader().getResourceAsStream(filename);
-            assert input != null;
+    private static XSSFWorkbook getDocument(String path) {
+        try (InputStream input = new FileInputStream(path)) {
             return new XSSFWorkbook(input);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
+        return null;
     }
 }

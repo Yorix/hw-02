@@ -1,9 +1,9 @@
 package com.yorix.universities.util;
 
+import com.yorix.universities.comparator.student.*;
+import com.yorix.universities.comparator.university.*;
 import com.yorix.universities.enums.StudentComparatorType;
 import com.yorix.universities.enums.UniversityComparatorType;
-import com.yorix.universities.util.comparator.student.*;
-import com.yorix.universities.util.comparator.university.*;
 
 public class ComparatorUtil {
 

@@ -1,4 +1,4 @@
-package com.yorix.universities.util.comparator.university;
+package com.yorix.universities.comparator.university;
 
 import com.yorix.universities.model.University;
 
